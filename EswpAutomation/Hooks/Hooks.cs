@@ -40,7 +40,7 @@ namespace EswpAutomation.Hooks
         {
             //Flush report once test completes
             extent.Flush();
-            BrowserFactory.CloseAllDrivers();
+         //   BrowserFactory.CloseAllDrivers();
 
         }
 
@@ -101,7 +101,8 @@ namespace EswpAutomation.Hooks
         public void Initialize()
         {
             BrowserFactory.InitBrowser("IE");
-            BrowserFactory.LoadApplication("https://eswp-pt2.azurewebsites.net/");
+           // BrowserFactory.LoadApplication("https://eswp-pt2.azurewebsites.net/");
+            BrowserFactory.LoadApplication("https://eswppt.azurewebsites.net/");
             //Create dynamic scenario name
             scenario = featureName.CreateNode<Scenario>(ScenarioContext.Current.ScenarioInfo.Title);
         }

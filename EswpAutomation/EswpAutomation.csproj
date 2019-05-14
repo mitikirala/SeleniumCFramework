@@ -133,45 +133,94 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Features\DoorBell1.feature.cs">
+    <Compile Include="Features\ChangeCrewfromEmail.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DoorBell.feature1</DependentUpon>
+      <DependentUpon>ChangeCrewfromEmail.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\SpecFlowFeature.feature.cs">
+    <Compile Include="Features\DoorBell.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SpecFlowFeature.feature</DependentUpon>
+      <DependentUpon>DoorBell.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ChangeCrew.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChangeCrew.Feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ExtendPermit.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExtendPermit.Feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\IssueAPermit.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IssueAPermit.Feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\CreateANewSwp.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateANewSwp.Feature</DependentUpon>
     </Compile>
     <Compile Include="Hooks\Hooks.cs" />
+    <Compile Include="pages\ActiveAlertPage.cs" />
+    <Compile Include="pages\AddCrewPage.cs" />
+    <Compile Include="pages\ArriveConfirmationPage.cs" />
+    <Compile Include="pages\HarzadeousPage.cs" />
+    <Compile Include="pages\MSAuthPage.cs" />
     <Compile Include="pages\NewSWPPage.cs" />
     <Compile Include="pages\PermitNotListedModalComponent.cs" />
+    <Compile Include="pages\PermitPage.cs" />
     <Compile Include="pages\PMResultsPage.cs" />
     <Compile Include="pages\PMSearchPage.cs" />
     <Compile Include="pages\ReceiverOptionsPage.cs" />
     <Compile Include="pages\SearchComponent.cs" />
+    <Compile Include="pages\SummonPage.cs" />
+    <Compile Include="pages\SwpGeneralInfoPage.cs" />
     <Compile Include="pages\SWPSuccessfulPage.cs" />
     <Compile Include="pages\TaskFooterComponent.cs" />
     <Compile Include="pages\WelcomePage.cs" />
     <Compile Include="pages\LandingPage.cs" />
+    <Compile Include="pages\WorkTypePage.cs" />
+    <Compile Include="StepDefinations\AddCrewStepDefs.cs" />
+    <Compile Include="StepDefinations\ChangingCrewStepDef.cs" />
+    <Compile Include="StepDefinations\IssuePermitStepDefs.cs" />
     <Compile Include="StepDefinations\StepDefinition.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\BrowserFactory.cs" />
+    <Compile Include="Utils\EswpTable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Features\DoorBell.feature1">
+    <None Include="Features\ChangeCrewfromEmail.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>DoorBell1.feature.cs</LastGenOutput>
+      <LastGenOutput>ChangeCrewfromEmail.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\SpecFlowFeature.feature">
+    <None Include="Features\DoorBell.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SpecFlowFeature.feature.cs</LastGenOutput>
+      <LastGenOutput>DoorBell.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\ChangeCrew.Feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ChangeCrew.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\ExtendPermit.Feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ExtendPermit.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\IssueAPermit.Feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>IssueAPermit.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\CreateANewSwp.Feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreateANewSwp.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

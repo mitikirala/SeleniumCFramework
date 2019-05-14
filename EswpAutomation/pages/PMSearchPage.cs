@@ -84,13 +84,13 @@ namespace ESWPAutomationFramework.Pages
             Thread.Sleep(8000);
             // IWebDriver driver = BrowserFactory.driver;
 
-            
-            var c = BrowserFactory.driver.FindElements(By.XPath("//*[@id='ServiceGeneralTask']/div[2]/table/tbody/tr")).Count;
-           // Console.WriteLine(driver.FindElements(By.XPath("//*[@id='ServiceGeneralTask']/div[2]/table/tbody/tr")).Count);
-           // Console.WriteLine(c);
-            // Console.WriteLine(s.Rows.Text);
-            if (c == 0)
+            EswpTable tbl = new EswpTable("ServiceGeneralTask");
+            Thread.Sleep(2000);
+            IWebElement row=  tbl.getRowByColumnDetails(1, PMNumber);
+            Thread.Sleep(2000);
+            if (row == null)
             {
+                Thread.Sleep(2000);
                 btnNewPermit.Click();
                 Thread.Sleep(10000);
 
@@ -105,7 +105,7 @@ namespace ESWPAutomationFramework.Pages
 
             SelectElement drpTaskType = new SelectElement(ddnTaskType);
             drpTaskType.SelectByText("Capital Project");
-            inputTaskName.SendKeys("Test ");
+            inputTaskName.SendKeys("Auto Four");
             SelectElement TaskPriority = new SelectElement(lstTaskPriority);
             TaskPriority.SelectByText("E/P1 Urgent");
             FunctionalLocation.SendKeys("Test Location");
@@ -115,7 +115,7 @@ namespace ESWPAutomationFramework.Pages
             companyName.Click();
             Thread.Sleep(5000);
             companyNameVal.Click();
-                                 
+                           
 
             Thread.Sleep(2000);
             // TaskFooterComponent footer = new TaskFooterComponent();
@@ -123,6 +123,32 @@ namespace ESWPAutomationFramework.Pages
            // footer.addTaskA.Click();
             Thread.Sleep(2000);
            // driver.FindElement(By.XPath("//*[@id='GetPermitMessageDialog']/div[3]/button")).Click();
+
+        }
+
+        public void EnterNewTaskDetails1(string TaskName)
+        {
+
+            SelectElement drpTaskType = new SelectElement(ddnTaskType);
+            drpTaskType.SelectByText("Capital Project");
+            inputTaskName.SendKeys(TaskName);
+            SelectElement TaskPriority = new SelectElement(lstTaskPriority);
+            TaskPriority.SelectByText("E/P1 Urgent");
+            FunctionalLocation.SendKeys("Test Location");
+            BadgeNo.SendKeys("1");
+            btnAddcrew.Click();
+            Thread.Sleep(5000);
+            companyName.Click();
+            Thread.Sleep(5000);
+            companyNameVal.Click();
+
+
+            Thread.Sleep(2000);
+            // TaskFooterComponent footer = new TaskFooterComponent();
+            addTaskA.Click();
+            // footer.addTaskA.Click();
+            Thread.Sleep(2000);
+            // driver.FindElement(By.XPath("//*[@id='GetPermitMessageDialog']/div[3]/button")).Click();
 
         }
 

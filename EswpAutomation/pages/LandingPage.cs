@@ -22,28 +22,29 @@ namespace EswpAutomation.pag
         }
 
 
-     
+
         #region PageObjects
+
+
+       
 
         [FindsBy(How = How.XPath, Using = "//*[@id='Div2']/a[2]")]
         public IWebElement receiverModal;
 
-        [FindsBy(How = How.XPath, Using = "('//h4[contains(text(), 'Safe Work Permit')]")]
+        [FindsBy(How = How.XPath, Using = "//h4[contains(text(), 'Safe Work Permit')]")]
         public IWebElement swpModal;
 
-        [FindsBy(How = How.XPath, Using = "('//h4[contains(text(), 'Administration')]")]
+        [FindsBy(How = How.XPath, Using = "//h4[contains(text(), 'Administration')]")]
         public IWebElement adminModal;
 
-        [FindsBy(How = How.XPath, Using = "('//h4[contains(text(), 'External Task Form')]")]
+        [FindsBy(How = How.XPath, Using = "//h4[contains(text(), 'External Task Form')]")]
         public IWebElement taskModal;
 
-        [FindsBy(How = How.XPath, Using = "('//h4[contains(text(), 'Reports')]")]
+        [FindsBy(How = How.XPath, Using = "//h4[contains(text(), 'Reports')]")]
         public IWebElement reportsModal;
 
-        [FindsBy(How = How.XPath, Using = "('//h4[contains(text(), 'Receiver DashBoard')]")]
+        [FindsBy(How = How.XPath, Using = "//h4[contains(text(), 'Receiver DashBoard')]")]
         public IWebElement dbModal;
-
-
 
 
          [FindsBy(How = How.XPath, Using = "//*[@id='divTenantEditBody']/table/tbody/tr[1]/td[2]/span/span/span")]
@@ -62,14 +63,16 @@ namespace EswpAutomation.pag
         [FindsBy(How = How.XPath, Using = "//a/*[text()='OK']")]
         public IWebElement btnOk { get; set; }
 
-        [FindsBy(How = How.Id, Using = "//*[@id='lblPlantNameId']")]
+        [FindsBy(How = How.XPath, Using = "//*[@id='lblPlantNameId']")]
         public IWebElement lblPlantName;
 
-        [FindsBy(How = How.Id, Using = "//span[contains(@class, 'win-commandimage')]")]
+       // [FindsBy(How = How.Id, Using = "//span[contains(@class, 'win-commandimage')]")]
+       // public IWebElement ringPlantOption;
+
+        [FindsBy(How = How.XPath, Using = "//span[@class='win-commandimage win-commandring']")]
         public IWebElement ringPlantOption;
 
-       // win-commandimage win-commandring
-
+        
 
         #endregion
 
@@ -79,16 +82,12 @@ namespace EswpAutomation.pag
         public void NagivagetoWelcomePage()
         {
             receiverModal.Click();
-            Thread.Sleep(2000);
-          //  lblPlantName.Click();
+            Thread.Sleep(4000);
+            ringPlantOption.Click();
             selectPlant();
-          //  tblCenter.Click();
-         
+                 
         }
-
-
-
-
+                     
         public void NavigateToReceiverPage()
         {
             this.lblPlantName.Click();

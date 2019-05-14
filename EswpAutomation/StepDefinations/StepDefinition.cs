@@ -38,12 +38,10 @@ namespace EswpAutomation.StepDefinations
                                                                        
             IJavaScriptExecutor jse = (IJavaScriptExecutor)driver;
             LandingPage landingPage = new LandingPage();
-            Console.WriteLine("aaaaaa");
             Thread.Sleep(2000);
             landingPage.NagivagetoWelcomePage();
-
             driver.Manage().Window.Maximize();
-            driver.FindElement(By.Id("lblPlantNameId")).Click();
+            landingPage.lblPlantName.Click();
             Thread.Sleep(5000);
 
            
@@ -64,9 +62,20 @@ namespace EswpAutomation.StepDefinations
         [When(@"no results are retrived user clicks on MyPermitisNotListed")]
         public void WhenNoResultsAreRetrivedUserClicksOnMyPermitisNotListed()
         {
-           pmSearchPage.EnterNewTaskDetails();
+
+            //PMSearchPage pmSearchPage = new PMSearchPage();
+           // pmSearchPage.EnterNewTaskDetails1(TaskName);
                      
         }
+
+
+        [When(@"User Submits the Task Details giving the (.*)")]
+        public void WhenUserSubmitsTheTaskDetailsGivingThe(string TaskName)
+        {
+            pmSearchPage.EnterNewTaskDetails1(TaskName);
+          //  ScenarioContext.Current.Pending();
+        }
+
 
         [When(@"User Submits the Task Details")]
         public void WhenUserSubmitsTheTaskDetails()

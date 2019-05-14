@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ESWPAutomationFramework.Pages
 {
-    //completed adding objects
+   
     public class ReceiverOptionsPage
     {
         public ReceiverOptionsPage()
